@@ -1,1 +1,1 @@
-curl https://learn.reboot01.com/assets/superhero/all.json | jq --argjson H "$HERO_ID" '.[] | select(.id == $H) | .connections.relatives'| sed 's/"//g'git 
+curl https://learn.reboot01.com/assets/superhero/all.json | jq --argjson H "$HERO_ID" '.[] | select(.id == $H) | .connections.relatives'| sed 's/"//g'
