@@ -2,12 +2,9 @@ package main
 
 import "github.com/01-edu/z01"
 
-func main(){
-for i:=0 ; i<10 ; i++{
-
-	z01.PrintRune(rune(i))
-}
-z01.PrintRune('\n')
-
-
+func main() {
+	for i := 0; i <10; i++ {
+		z01.PrintRune(rune(i))
+	}
+	z01.PrintRune('\n')
 }
