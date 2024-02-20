@@ -1,3 +1,1 @@
-a="$(ls-lR | egrep -c '^-|^d)"
-((a++))
-echo $a
+find -type f -name "*.sh" -exec basename {} .sh \;
