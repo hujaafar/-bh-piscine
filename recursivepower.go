@@ -8,7 +8,7 @@ func RecursivePower(nb int, power int) int {
 		return 0
 	}
 	if nb <= 20 && nb >= 0 {
-		return nb * IterativePower(nb, power-1)
+		return nb * RecursivePower(nb, power-1)
 	} else {
 		return 0
 	}
