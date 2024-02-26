@@ -1,8 +1,9 @@
 package piscine
 
-func IsNumeric(nbr int) bool {
-	for i := 0; i < nbr; i++ {
-		if nbr < 48 && nbr > 57 {
+func IsNumeric(s string) bool {
+	s1 := []rune(s)
+	for i := 0; i < len(s1); i++ {
+		if s1[i] < 48 && s1[i] > 57 {
 			return false
 		}
 	}
