@@ -1,6 +1,5 @@
 package piscine
 
-
 func ToLower(s string) string {
 	s1 := []rune(s)
 	for i := 0; i < len(s1); i++ {
