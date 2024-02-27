@@ -8,10 +8,13 @@ import (
 
 func main() {
 	arr := os.Args
-	arr2 := []rune(arr[0])
 
-	for i := 1; i < len(arr2); i++ {
-		z01.PrintRune(arr2[i])
+	for i := range arr {
+		if i > 0 {
+			for _, chr := range arr[i] {
+				z01.PrintRune(chr)
+			}
+			z01.PrintRune('\n')
+		}
 	}
-	z01.PrintRune('\n')
 }
