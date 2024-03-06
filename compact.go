@@ -1,6 +1,7 @@
 package piscine
 
 func Compact(ptr *[]string) int {
+
 	add := 0
 	var arr []string
 	for _, v := range *ptr {
