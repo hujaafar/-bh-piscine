@@ -2,24 +2,27 @@ package piscine
 
 func LoafOfBread(str string) string {
 	if len(str) < 5 {
-		return "Invalid Output"
+		return "Invalid Output\n"
 	}
 
-	var result []rune
+	var result string
 	i := 0
 
 	for i < len(str)-4 {
-		for j := 0; j < 5; j++ {
-			result = append(result, rune(str[i+j]))
+		count := 0
+		for j := i; j < i+5; j++ {
+			if str[j] != ' ' {
+				result += string(str[j])
+				count++
+			}
 		}
-		result = append(result, '\n') // Add newline after each set of 5 characters
-		i += 6                        // Move to the next set of 5 characters
+		if count == 5 {
+			i += 6 // Move to the next set of 5 characters
+		} else {
+			i += count // Skip the current word
+		}
+		result += "\n" // Add newline after each set of 5 characters
 	}
 
-	// Add the remaining characters if any
-	for ; i < len(str); i++ {
-		result = append(result, rune(str[i]))
-	}
-
-	return string(result)
+	return result
 }
