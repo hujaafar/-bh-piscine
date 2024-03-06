@@ -3,7 +3,7 @@ package piscine
 import "github.com/01-edu/z01"
 
 func DealAPackOfCards(deck []int) {
-	players := make(map[int][]int)
+	players := map[int][]int{}
 	for i, card := range deck {
 		player := i % 4
 		players[player] = append(players[player], card)
