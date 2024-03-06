@@ -1,10 +1,26 @@
-package piscine
+package main
+
+import "fmt"
+
+type Aircraft int
+
+const (
+	AIRCRAFT1 Aircraft = 1
+)
 
 type Pilot struct {
 	Name     string
-	Life     float32
+	Life     float64
 	Age      int
-	Aircraft int
+	Aircraft Aircraft
 }
 
-const AIRCRAFT1 = 1
+func main() {
+	var donnie Pilot
+	donnie.Name = "Donnie"
+	donnie.Life = 100.0
+	donnie.Age = 24
+	donnie.Aircraft = AIRCRAFT1
+
+	fmt.Println(donnie)
+}
