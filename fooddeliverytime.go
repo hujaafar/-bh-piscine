@@ -14,7 +14,7 @@ var menu = map[string]food{
 func FoodDeliveryTime(order string) int {
 	value, error := menu[order]
 	if !error {
-		return 0
+		return 404
 	}
 	return value.preptime
 }
