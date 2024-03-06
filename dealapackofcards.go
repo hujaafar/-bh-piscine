@@ -12,6 +12,6 @@ func DealAPackOfCards(deck []int) {
 			}
 			fmt.Print(deck[i*cardsPerPlayer+j])
 		}
-		fmt.Println()
+		fmt.Print("\n")
 	}
 }
