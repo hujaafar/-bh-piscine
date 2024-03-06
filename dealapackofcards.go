@@ -1,42 +1,17 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import "fmt"
 
 func DealAPackOfCards(deck []int) {
-	players := map[int][]int{}
-	for i, card := range deck {
-		player := i % 4
-		players[player] = append(players[player], card)
-	}
+	cardsPerPlayer := len(deck) / 4
 	for i := 0; i < 4; i++ {
-		z01.PrintRune('P')
-		z01.PrintRune('l')
-		z01.PrintRune('a')
-		z01.PrintRune('y')
-		z01.PrintRune('e')
-		z01.PrintRune('r')
-		z01.PrintRune(' ')
-		z01.PrintRune(rune('1' + i))
-		z01.PrintRune(':')
-		z01.PrintRune(' ')
-		for j, card := range players[i] {
-			printNumber(card)
-			if j < len(players[i])-1 {
-				z01.PrintRune(',')
-				z01.PrintRune(' ')
+		fmt.Printf("Player %d: ", i+1)
+		for j := 0; j < cardsPerPlayer; j++ {
+			if j != 0 {
+				fmt.Print(", ")
 			}
+			fmt.Print(deck[i*cardsPerPlayer+j])
 		}
-		z01.PrintRune('\n')
+		fmt.Println()
 	}
-}
-
-func printNumber(n int) {
-	if n < 0 {
-		z01.PrintRune('-')
-		n = -n
-	}
-	if n >= 10 {
-		printNumber(n / 10)
-	}
-	z01.PrintRune(rune('0' + n%10))
 }
