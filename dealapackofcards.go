@@ -29,6 +29,7 @@ func DealAPackOfCards(deck []int) {
 		z01.PrintRune('\n')
 	}
 }
+
 func printNumber(n int) {
 	if n < 0 {
 		z01.PrintRune('-')
