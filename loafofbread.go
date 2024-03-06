@@ -9,19 +9,21 @@ func LoafOfBread(str string) string {
 	i := 0
 
 	for i < len(str)-4 {
-		count := 0
+		word := ""
 		for j := i; j < i+5; j++ {
 			if str[j] != ' ' {
-				result += string(str[j])
-				count++
+				word += string(str[j])
+			} else {
+				j++ // Skip the space
 			}
 		}
-		if count == 5 {
-			i += 6 // Move to the next set of 5 characters
-		} else {
-			i += count // Skip the current word
-		}
-		result += "\n" // Add newline after each set of 5 characters
+		result += word + "\n"
+		i += 5 // Move to the next set of 5 characters
+	}
+
+	// Add the remaining characters if any
+	if i < len(str) {
+		result += str[i:] + "\n"
 	}
 
 	return result
