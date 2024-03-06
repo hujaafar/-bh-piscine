@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"github.com/01-edu/z01"
+)
 
 type Door struct {
 	state string
@@ -12,7 +14,9 @@ const (
 )
 
 func PrintStr(s string) {
-	fmt.Print(s)
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
 }
 
 func OpenDoor(ptrDoor *Door) {
@@ -26,9 +30,9 @@ func CloseDoor(ptrDoor *Door) bool {
 	return true
 }
 
-func IsDoorOpen(Door Door) bool {
+func IsDoorOpen(door Door) bool {
 	PrintStr(" is the Door opened ? ")
-	return Door.state == OPEN
+	return door.state == OPEN
 }
 
 func IsDoorClose(ptrDoor *Door) bool {
